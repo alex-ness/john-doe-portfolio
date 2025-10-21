@@ -81,7 +81,8 @@
 }
 
 .footer .social-icon {
-  transition: filter 160ms ease, color 160ms ease;
+  font-size: 1.2rem;
+  transition: filter .15s, color .15s;
 }
 
 .footer .social-icon:hover {
@@ -89,8 +90,14 @@
   color: #fff;
 }
 
-footer a:hover { 
-  font-weight: 600;  
+.footer a { 
+  text-decoration: none ;
+  transition: color .15s, font-weight .15s;
+}
+
+.footer a:hover { 
+  font-weight: 600;
+  color: #fff;  
 }
 
 .page-container {
