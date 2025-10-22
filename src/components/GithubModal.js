@@ -1,17 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
 
-export default function GithubModal({ open, onClose, username = 'github-johndoe' }) {
+export default function GithubModal({ open, onClose }) {
+    const username = 'alex-ness';
 
   const [data, setData] = useState(null);     
   const [loading, setLoading] = useState(false); 
   const [error, setError] = useState(null);   
 
   useEffect(() => {
-    if (!open) return;  
-    if (data) return;  
+    if (!open) return;    
 
     setLoading(true);   
+
     fetch(`https://api.github.com/users/${username}`)  
       .then(res => {
         if (!res.ok) throw new Error('Erreur API');  
@@ -20,7 +21,7 @@ export default function GithubModal({ open, onClose, username = 'github-johndoe'
       .then(json => setData(json))                   
       .catch(e => setError(e.message))               
       .finally(() => setLoading(false));             
-  }, [open, username, data]);  
+  }, [open, username]);  
 
   if (!open) return null;
 
