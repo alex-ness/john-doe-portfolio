@@ -12,6 +12,7 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import MentionsLegales from './pages/MentionsLegales';
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function HeroSection({ setModalOpen}) {
   
@@ -65,9 +66,9 @@ function App() {
 
           <HeroSection setModalOpen={setModalOpen} />
 
-
-        <main>
           <Header />
+
+        <main>        
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/services" element={<Services />} />  
@@ -76,7 +77,9 @@ function App() {
             <Route path="/mentions-legales" element={<MentionsLegales />} />  
           </Routes>
         </main>
-          <GithubModal open={modalOpen} onClose={() => setModalOpen(false)}/> 
+
+          <Footer />
+          <GithubModal open={modalOpen} onClose={() => setModalOpen(false)} /> 
       </div>
     );
 }
